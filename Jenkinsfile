@@ -2,16 +2,16 @@ pipeline {
     agent any
 
     environment {
-        SONAR_TOKEN = credentials('sonar-token')
+        SONAR_TOKEN = credentials('sonar-token-2')  // Nouveau token
         SONAR_HOST = 'http://localhost:9000'
-        PROJECT_KEY = 'jen-son-1'
+        PROJECT_KEY = 'jen-son-2'                  // Nouvelle clé SonarQube
     }
 
     stages {
 
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/umbadieudonne913/jen-son-1.git'
+                git branch: 'main', url: 'https://github.com/umbadieudonne913/jen-son-2.git'  // Nouveau repo
             }
         }
 
